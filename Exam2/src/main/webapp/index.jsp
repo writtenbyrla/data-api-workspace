@@ -43,7 +43,7 @@
 					success: function(data){
 						console.log(data);
 						console.log(data.response.body.items.item[0].wfSv); // 여러 데이터인 경우에는 for문 돌려야 함
-						let value = "";
+						let value = ""; // 최종적으로 table에 넣을 값
 						
 						const result = data.response.body.items.item;
 						//console.log("result : " + result);
@@ -60,7 +60,7 @@
 									+ "<td>" + dataList[index] + "</td>"
 									+ "</tr>";
 							}
-					}
+						}	
 
 					
 					$("table tbody").html(value);

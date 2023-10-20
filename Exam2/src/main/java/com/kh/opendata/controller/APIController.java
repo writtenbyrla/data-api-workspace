@@ -22,7 +22,7 @@ public class APIController {
 		String url = "https://apis.data.go.kr/1360000/MidFcstInfoService/getMidFcst";
 		
 		url += "?serviceKey=" + serviceKey; 
-		url += "&tmFc=202310190600";
+		url += "&tmFc=202310200600";
 		url += "&dataType=JSON"; // 기본값 xml, json으로 지정 가능
 		url += "&stnId=" + stnId; // 지점번호(front에서 파라미터값으로 넘겨받아서 호출)
 		
