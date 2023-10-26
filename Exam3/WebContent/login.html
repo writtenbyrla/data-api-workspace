@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.4.0.js"></script>
+</head>
+<body>
+	<h1>로그인</h1>
+	<p>아이디 : <input type="text" id="id"></p>
+	<p>비밀번호 : <input type="password" id="pwd"></p>
+	<button>로그인</button>
+	
+	<script>
+	// 이벤트 : 버튼 클릭시 -> click, 입력을 작성하는 순간 -> input, 값이 변경됐을 시 -> change
+	$("button").on("click", function(){
+		const id = $("#id").val();
+		const pwd = $("#pwd").val();
+		
+		// 정규표현식 제공됨
+		
+		$.ajax({
+			url: "Login",
+			data: {id: id, pwd: pwd},
+			success: function(response){
+				alert(response);
+				// 만약 response 값을 화면으로 받고 싶다 -> $(선택자).html(response);
+			}	
+		});
+	});
+
+	
+	
+	</script>
+</body>
+</html>
