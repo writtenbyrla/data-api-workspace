@@ -5,3 +5,5 @@ create table members(
 );
 insert into members values('user1', 'user1', 'user1@email.com');
 commit;
+
+select * from members;

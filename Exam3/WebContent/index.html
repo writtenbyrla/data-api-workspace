@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.4.0.js"></script>
+</head>
+<body>
+
+<input type="text" id="email"><span id="result"></span>
+
+<script>
+$("#email").on("input", function(){
+
+	var email = $("#email").val();
+	const regex = /^[a-zA-Z0-9+-\_.]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+	
+
+	if(regex.exec(email) == null){
+		$("#result").html("이메일 형식에 맞지 않습니다.");
+		return;
+	}else{
+		$.ajax({
+			url: "CheckEmail",
+			data: {email: $("#email").val()},
+			success: function(resp){
+				$("#result").html(resp);
+			}
+		});
+	}
+});
+
+
+</script>
+</body>
+</html>
